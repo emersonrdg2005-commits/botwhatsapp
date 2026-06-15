@@ -1,0 +1,20 @@
+{
+  "name": "boletos-bot",
+  "version": "1.0.0",
+  "description": "Bot WhatsApp + App Web para controle de vencimentos de boletos",
+  "main": "bot/index.js",
+  "scripts": {
+    "bot": "node bot/index.js",
+    "web": "node webapp/server.js",
+    "start": "concurrently \"npm run bot\" \"npm run web\""
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "better-sqlite3": "^11.3.0",
+    "concurrently": "^9.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "node-cron": "^3.0.3",
+    "web-push": "^3.6.7"
+  }
+}
