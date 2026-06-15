@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vencimentos — Restaurante e Lanchonete Reis</title>
+<link rel="icon" type="image/png" href="/assets/icon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark"><img src="/assets/icon-512.png" alt="Restaurante e Lanchonete Reis" /></span>
+        <div>
+          <h1>Vencimentos</h1>
+          <p class="subtitle">Restaurante e Lanchonete Reis — agenda de boletos</p>
+        </div>
+      </div>
+      <button id="btn-notif" class="btn btn-ghost">Ativar notificações</button>
+    </header>
+
+    <main>
+      <section class="panel form-panel">
+        <h2>Novo lançamento</h2>
+        <form id="form-novo">
+          <div class="field">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Ex: Energisa" required />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="valor">Valor (R$)</label>
+              <input type="text" id="valor" name="valor" placeholder="250,90" required inputmode="decimal" />
+            </div>
+            <div class="field">
+              <label for="vencimento">Vencimento</label>
+              <input type="date" id="vencimento" name="vencimento" required />
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Adicionar à agenda</button>
+        </form>
+        <p id="form-msg" class="form-msg"></p>
+      </section>
+
+      <section class="panel list-panel">
+        <div class="list-header">
+          <h2>Boletos em aberto</h2>
+          <div class="filter-tabs">
+            <button class="tab active" data-filter="abertos">Em aberto</button>
+            <button class="tab" data-filter="todos">Todos</button>
+          </div>
+        </div>
+        <div id="lista" class="lista"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
